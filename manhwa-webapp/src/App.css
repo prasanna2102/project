@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.manhwa-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.manhwa-item {
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 250px;
+  text-align: left;
+}
+
+img {
+  border-radius: 10px;
+}

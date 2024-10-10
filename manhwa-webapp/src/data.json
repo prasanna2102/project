@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "title": "Solo Leveling",
+      "genre": "Fantasy, Action",
+      "description": "A story about a weak hunter becoming the strongest.",
+      "image": "https://manhwa-images-storages.s3.ap-south-1.amazonaws.com/1image1.webp"
+    },
+    {
+      "id": 2,
+      "title": "Tower of God",
+      "genre": "Adventure, Fantasy",
+      "description": "A boy enters a mysterious tower to find his friend.",
+      "image": "https://manhwa-images-storages.s3.ap-south-1.amazonaws.com/image2.webp"
+    }
+  ]
+  
