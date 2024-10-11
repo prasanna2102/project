@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name your-ec2-public-ip;
+    server_name 13.233.122.36;
 
     location / {
         proxy_pass http://localhost:3000;  # or your app's port
