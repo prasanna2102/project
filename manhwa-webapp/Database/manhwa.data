@@ -1,0 +1,12 @@
+CREATE TABLE manhwa (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  genre VARCHAR(100),
+  description TEXT,
+  image_url VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO manhwa (title, genre, description, image_url)
+VALUES ('Solo Leveling', 'Fantasy', 'A story about a weak hunter who becomes the strongest.', 'https://manhwa-images-storages.s3.ap-south-1.amazonaws.com/1image1.webp');
