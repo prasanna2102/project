@@ -1,0 +1,22 @@
+sudo apt update
+sudo apt install nodejs npm git
+git clone https://github.com/your-username/your-repo.git
+npm install
+npm start
+sudo apt install nginx
+server {
+    listen 80;
+    server_name your-ec2-public-ip;
+
+    location / {
+        proxy_pass http://localhost:3000;  # or your app's port
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+sudo nginx -t
+sudo systemctl restart nginx
+node server.js
