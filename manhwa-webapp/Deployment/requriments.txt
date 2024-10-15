@@ -4,10 +4,11 @@ git clone https://github.com/your-username/your-repo.git
 npm install
 npm start
 sudo apt install nginx
+sudo nano /etc/nginx/sites-available/default
+
 server {
     listen 80;
     server_name your-ec2-public-ip;
-
     location / {
         proxy_pass http://localhost:3000;  # or your app's port
         proxy_http_version 1.1;
