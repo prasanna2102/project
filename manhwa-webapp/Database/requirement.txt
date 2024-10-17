@@ -8,20 +8,49 @@ const mysql = require('mysql2');
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: 'your-rds-endpoint',   // e.g. database-1.xxxxxxx.us-east-1.rds.amazonaws.com
-  user: 'your-username',
-  password: 'your-password',
-  database: 'your-database-name'
+  host: 'your-rds-endpoint',  // e.g. database-1.xxxxxxx.us-east-1.rds.amazonaws.com
+  user: 'your-username',       // e.g. admin
+  password: 'your-password',   // e.g. your database password
+  database: 'your-database'    // e.g. my_database_name
 });
 
-// Connect to the database
-connection.connect(error => {
-  if (error) {
-    console.error('Database connection failed:', error.stack);
+// Connect to MySQL database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL database:', err.stack);
     return;
   }
-  console.log('Connected to the MySQL database.');
+  console.log('Connected to MySQL database as ID', connection.threadId);
 });
+
+// Example query (optional)
+connection.query('SELECT 1 + 1 AS solution', (err, results) => {
+  if (err) {
+    console.error('Error executing query:', err.stack);
+    return;
+  }
+  console.log('The solution is:', results[0].solution);
+});
+
+// End the connection (optional, based on your app logic)
+connection.end();
+
+
+
+connection.query('SELECT * FROM your_table_name', (err, results) => {
+  if (err) {
+    console.error('Error executing query:', err.stack);
+    return;
+  }
+  console.log('Query results:', results);
+});
+
+
+
+
+
+
+
 6. Run the Application
 node app.js
 
